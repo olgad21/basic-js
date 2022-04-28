@@ -50,7 +50,7 @@ function transform(arr) {
       case '--discard-prev': newArr.splice(controlIndex-1, 2);
       break;
 
-      case '--double-next': newArr.splice(controlIndex, 1, newArr[controlIndex+1]); /*newArr[controlIndex] = newArr[controlIndex + 1];*/
+      case '--double-next': /*newArr.splice(controlIndex, 1, newArr[controlIndex+1]);*/ newArr[controlIndex] = newArr[controlIndex + 1];
       break;
 
       case '--double-prev': /*newArr.splice(controlIndex, 1, newArr[controlIndex-1]);*/ newArr[controlIndex] = newArr[controlIndex - 1];
