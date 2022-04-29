@@ -45,10 +45,6 @@ class VigenereCipheringMachine {
   //   });
 
   //   return encrypted;
-
-  //                           // var cipher = crypto.createCipheriv(algorithm, key, iv);
-  //                           // const encrypted = cipher.update(str);
-  //                           // return encrypted.toUpperCase();
   // } 
 
   decrypt(encrypted, key) {
@@ -66,10 +62,8 @@ class VigenereCipheringMachine {
 
   //   return str;
 
-  //                                 // var decipher = crypto.createCipheriv(algorithm, key, iv);
-  //                                 // const decrypted = decipher.update(str);
-  //                                 // return decrypted.toUpperCase();
-  //                               }
+  //                                
+  // }
 
   // getTabulaRecta() {
   //   const tabulaRecta = this.getTabulaRectaSchema();
