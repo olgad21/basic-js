@@ -19,8 +19,6 @@ function repeater(str, options) {
   str = String(str);
 
   str = str + '^@4uJd';
-  console.log(str, 'str');
-  
  
   let { repeatTimes } = options;
   if(!repeatTimes) {
@@ -28,16 +26,14 @@ function repeater(str, options) {
   }
   str = str.repeat(repeatTimes);
   let strArray = str.split('^@4uJd', repeatTimes);
-  
 
   let { addition } = options;
-  if(!addition){
+
+  if(addition === undefined){
     addition = ''; 
   }
- 
-  addition = String(addition);
 
-  console.log(addition, 'addition');
+  addition = String(addition);
 
   addition = addition + '^@4uJd';
 
@@ -47,14 +43,13 @@ function repeater(str, options) {
   }
   addition = addition.repeat(additionRepeatTimes);
   
-
   let additionArray = addition.split('^@4uJd', additionRepeatTimes);
 
   let { additionSeparator } = options;
   if(!additionSeparator) {
     additionSeparator = '|';
   }
-  console.log(additionSeparator, 'additionSeparator');
+
   additionArray = additionArray.join(additionSeparator);
 
   strArray = strArray.map(el => el = el + additionArray);
@@ -63,10 +58,8 @@ function repeater(str, options) {
   if(!separator) {
     separator = '+';
   }
-  console.log(separator, 'separator');
   
   strArray = strArray.join(separator);
-  console.log(strArray);
 
   return strArray;
 }
