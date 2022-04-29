@@ -10,48 +10,37 @@ const chainMaker = {
    return this.chain.length;
   },
   addLink(value) {
-    // this.chain.push(`( ${value} )`);
-    // return value
-    throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+    this.chain.push(`( ${value} )`);
+    return this;
   },
   removeLink(position) {
-    // if (this._validatePosition(position)){
-    //   if (position < 1 || position > this.getLength()){
-    //     this._deleteChain();
-    //     throw new Error("You can't remove incorrect link!")
-    //   }
-    //   const index = position - 1;
-    //   this.chain.splice(index, 1);
-    //   return this
-    // }
-    // this._deleteChain();
-    // throw new Error("You can't remove incorrect link!")
-    throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+    if (this._validatePosition(position)){
+      if (position < 1 || position > this.getLength()){
+        this._deleteChain();
+        throw new Error("You can't remove incorrect link!")
+      }
+      const index = position - 1;
+      this.chain.splice(index, 1);
+      return this;
+    }
+    this._deleteChain();
+    throw new Error("You can't remove incorrect link!");
   },
   reverseChain() {
-    // this.chain.reverse();
-    // return this
-    throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+    this.chain.reverse();
+    return this;
   },
   finishChain() {
-    // const allChain = this._getChain();
-    // this._deleteChain();
-    // return allChain
-    throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+    const allChain = this.chain.join('~~');
+    this._deleteChain();
+    return allChain;
   },
-  // _getChain() {
-  //   return this.chain.join('~~')
-  // },
-  // _deleteChain(){
-  //   this.chain.length = 0;
-  // },
-  // _validatePosition(number){
-  //   return typeof number === 'number' && (number ^ 0) === number
-  // }
+  _deleteChain(){
+    this.chain.length = 0;
+  },
+  _validatePosition(number){
+    return typeof number === 'number' && (number ^ 0) === number
+  }
 };
 
 module.exports = {
